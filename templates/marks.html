@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 card mx-auto p-5 mt-5">
+                <h1>Student Report Card</h1>
+
+                <table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <td colspan="2">{{std.firstname}} {{std.lastname}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td colspan="2">{{std.email}}
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <td colspan="2">{{std.age}}</td>
+                    </tr>
+                    <tr>
+                        <th>Sr.no</th>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                    </tr>
+                    {%for i in studentMarks%}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.subject.subject_name}}</td>
+                        <td>{{i.marks}}</td>
+                    </tr>
+                    {%endfor%}
+                    <tr>
+                        <th colspan="2">Total</th>
+                        <th>{{total.total}}</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Rank In Class</th>
+                        <th>{{count}}</th>
+
+                    </tr>
+                </table>
+              
+            </div>
+</body>
+
+</html>
